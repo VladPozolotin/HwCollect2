@@ -11,6 +11,7 @@ public class Main {
             System.out.println("1. Добавить");
             System.out.println("2. Показать");
             System.out.println("3. Удалить");
+            System.out.println("4. Найти");
             int num = Integer.parseInt(scanner.nextLine());
             switch (num) {
                 case 1:
@@ -49,6 +50,16 @@ public class Main {
                         }
                     } else {
                         System.out.println("Пусто");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Введите текст для поиска:");
+                    String query = (scanner.nextLine()).toLowerCase();
+                    for (String item : cart) {
+                        String itemLower = item.toLowerCase();
+                        if (itemLower.contains(query)) {
+                            System.out.println((cart.lastIndexOf(item) + 1) + ". " + item);
+                        }
                     }
                     break;
                 default:
